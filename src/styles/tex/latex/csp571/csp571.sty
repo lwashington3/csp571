@@ -1,0 +1,28 @@
+%! Package = csp571
+%! Author = Len Washington III
+%! Date = 01/15/2025
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{csp571}[2025/01/15 A styling package for the class: CSP 571 - Data Preparation and Analysis.]
+
+\RequirePackage{kvoptions}
+
+\SetupKeyvalOptions{
+	family=csp,
+	prefix=csp@
+}
+
+\DeclareStringOption{title}
+\DeclareStringOption[Len Washington III]{author}
+\DeclareStringOption[\today]{date}
+\DeclareStringOption[{Data Preparation and Analysis}]{subject}
+\DeclareStringOption[{CSP 571}]{subjectCode}
+
+\ProcessKeyvalOptions*
+
+\RequirePackage[author=\csp@author,
+	title=\csp@title,
+	date=\csp@date,
+	subject=\csp@subject,
+	code=\csp@subjectCode
+]{iitacademics}
